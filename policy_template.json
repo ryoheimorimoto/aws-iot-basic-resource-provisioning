@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:Connect",
+      "Resource": "arn:aws:iot:{AWS_REGION}:{YOUR_AWS_ACCOUNT_ID}:client/<<<INDEX>>>"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iot:Publish",
+        "iot:Receive"
+      ],
+      "Resource": [
+        "arn:aws:iot:{AWS_REGION}:{YOUR_AWS_ACCOUNT_ID}:topic/<<<INDEX>>>",
+        "arn:aws:iot:{AWS_REGION}:{YOUR_AWS_ACCOUNT_ID}:topic/<<<INDEX>>>/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Subscribe",
+      "Resource": [
+        "arn:aws:iot:{AWS_REGION}:{YOUR_AWS_ACCOUNT_ID}:topicfilter/<<<INDEX>>>",
+        "arn:aws:iot:{AWS_REGION}:{YOUR_AWS_ACCOUNT_ID}:topicfilter/<<<INDEX>>>/*"
+      ]
+    }
+  ]
+}
