@@ -13,7 +13,7 @@ AWS_REGION="ap-northeast-1" # Overwrite for your region.
 echo "- - - - - - - - - - - - - - - - - - - -"
 echo "Start to create policy."
 
-policy_name="unvs_agre_proto_${index}_policy"
+policy_name="${index}_policy"
 policy_file_name="${index}/${index}-policy.json"
 sed -e "s/<<<INDEX>>>/${index}/g" ./policy_template.json > ${policy_file_name}
 
@@ -28,7 +28,7 @@ echo "Policy ARN: ${policy_arn}"
 echo "- - - - - - - - - - - - - - - - - - - -"
 echo "Start to create Thing."
 
-thing_name="unvs_agre_proto_${index}"
+thing_name="${index}"
 
 thing_arn=`aws iot create-thing \
   --thing-name ${thing_name} \
